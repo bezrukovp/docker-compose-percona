@@ -1,0 +1,20 @@
+version: "2"
+services:
+  percona:
+    image: percona/percona-server:5.7
+    container_name: perconaserver
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      # create volumes for use
+      - data:/var/lib/mysql
+      # bind mount my local my.cnf
+      # - $PWD/my.cnf:/etc/my.cnf
+    command:
+      # Workaround for no my.cnf in image
+      - '--user=mysql'
+volumes:
+  data:
+    driver: "local"

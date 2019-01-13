@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+.idea
+
+*--
+*-
+*--.*
+*-.*
+
+/.env
+
+!.gitkeep
+
+*.override.yml
