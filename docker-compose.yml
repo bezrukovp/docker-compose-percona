@@ -19,7 +19,7 @@ services:
     command:
       # Workaround for no my.cnf in image
       - '--user=mysql --disable-log-bin --default-authentication-plugin=mysql_native_password'
-    restart: on-failure
+    restart: 'no'
 volumes:
   data:
     driver: "local"
